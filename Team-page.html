@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IETE-KJSIT Team</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marmelad&family=Space+Grotesk:wght@500&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Skranji:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            overflow-x: hidden;
+        }
+
+        body {
+            background: linear-gradient(180deg,
+                    rgba(0, 0, 0, 1) 0%,
+                    rgba(11, 2, 82, 1) 100%);
+            font-family: Verdana, sans-serif;
+            margin: 0;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* nav */
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            position: fixed;
+            top: 30px;
+            z-index: 5;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(182, 180, 180, 0.5);
+            border-radius: 10px;
+            color: aliceblue;
+            list-style: none;
+            padding: 10px;
+        }
+
+        nav ul li {
+            padding: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            margin: 0px 10px;
+            color: white;
+            border-radius: 8px;
+            padding: 8px 40px;
+            transition: 0.4s ease;
+            font-family: 'Marmelad', sans-serif;
+            font-size: 20px;
+        }
+
+        nav ul li a:hover {
+            color: rgb(0, 0, 0);
+            background-color: rgb(205, 220, 230);
+            transition: 0.4s ease;
+        }
+
+        @media (max-width: 768px) {
+            nav ul li a {
+                padding: 8px 20px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            nav ul li a {
+                padding: 6px 16px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 484px) {
+            nav ul li a {
+                padding: 6px 6px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 397px) {
+            nav ul li a {
+                padding: 1px 1px;
+                font-size: 10px;
+            }
+        }
+
+        /* main */
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10em;
+            padding-top: 1em;
+        }
+
+        .member-section {
+            padding: 0em;
+        }
+
+        .member-section h1 {
+            color: #fff;
+            text-align: center;
+            font-size: 4em;
+            margin: .5em;
+        }
+
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+
+        .container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .container .box {
+            position: relative;
+            width: 16rem;
+            height: 16rem;
+            margin: 4rem;
+        }
+
+        .container .box:hover .imgBox {
+            transform: translate(-3.5rem, -3.5rem);
+        }
+
+        .container .box:hover .content {
+            transform: translate(3.5rem, 3.5rem);
+        }
+
+        .imgBox {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            transition: all 0.5s ease-in-out;
+            overflow: hidden;
+        }
+
+        .imgBox img {
+            width: 16rem;
+            height: 16rem;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: center;
+            background-color: #fff;
+            z-index: 1;
+            align-items: flex-end;
+            text-align: center;
+            transition: 0.5s ease-in-out;
+        }
+
+        .content h2 {
+            display: block;
+            font-size: 2rem;
+            color: #111;
+            font-weight: 500;
+            line-height: 2rem;
+            letter-spacing: 1px;
+            font-size: 1.5rem;
+        }
+
+        .content span {
+            color: #555;
+            font-size: 1rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 600px) {
+            .container .box:hover .content {
+                transform: translate(0, 3.5rem);
+            }
+
+            .content h2 {
+                font-size: 1.2rem;
+            }
+
+            .content span {
+                font-size: 1rem;
+            }
+
+            .container .box:hover .imgBox {
+                transform: translate(0, -3.5rem);
+            }
+        }
+
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(11, 2, 82, 1);
+            color: aliceblue;
+            padding: 10px;
+            height: 20vh;
+            gap: 20px;
+        }
+
+        footer a img {
+            width: 40px;
+        }
+
+        .Heads {
+            text-align: center;
+            margin-top: 3em;
+        }
+
+        .head-card {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            width: 200px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .head-card h2 {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .head-card p {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .head-card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="./Home.html">Home</a></li>
+            <li><a href="#">Team</a></li>
+            <li><a href="./Event-page.html">Events</a></li>
+            <li><a href="./aboutus.html">About us</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="member-section">
+            <h1>Core 2023-24</h1>
+            <div class="container">
+                <div class="box">
+                    <div class="imgBox">
+                        <img src="./assets/Core/Sahil.JPG"
+                            alt="Sahil Deshmukh">
+                    </div>
+                    <div class="content">
+                        <h2>Sahil Deshmukh</br>
+                            <span>Chairperson</span>
+                        </h2>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="imgBox">
+                        <img src="./assets/Core/Netra.JPG"
+                            alt="Netra Shukla">
+                    </div>
+                    <div class="content">
+                        <h2>Netra Shukla</br>
+                            <span>Vice Chairperson</span>
+                        </h2>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="imgBox">
+                        <img src="./assets/Core/IMG_4201.JPG"
+                            alt="Riddhi Bhogaonkar">
+                    </div>
+                    <div class="content">
+                        <h2>Riddhi Bhogaonkar</br>
+                            <span>Secretary</span>
+                        </h2>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="imgBox">
+                        <img src="./assets/Core/IMG_4205.JPG"
+                            alt="Harshal Dhabale">
+                    </div>
+                    <div class="content">
+                        <h2>Harshal Dhabale</br>
+                            <span>Public Relations Officer</span>
+                        </h2>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="imgBox">
+                        <img src="./assets/Core/Jeneel.JPG"
+                            alt="Jeenel Narodia">
+                    </div>
+                    <div class="content">
+                        <h2>Jeneel Narodia</br>
+                            <span>Chief Executive Officer</span>
+                        </h2>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="imgBox">
+                        <img src="./assets/Core/Pranav.JPG"
+                            alt="Pranav Singh">
+                    </div>
+                    <div class="content">
+                        <h2>Pranav Singh</br>
+                            <span>Chief Technical Officer</span>
+                        </h2>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="imgBox">
+                        <img src="./assets/Core/Siddharth.JPG"
+                            alt="Siddharth Parekh">
+                    </div>
+                    <div class="content">
+                        <h2>Siddharth Parekh</br>
+                            <span>Treasurer</span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="member-section">
+            <h1>Sub-core</h1>
+            <div class="container">
+                <div class="box">
+                    <div class="imgBox">
+                        <img src="./assets/Abbas.JPG"
+                            alt="Abbas Bootwala">
+                    </div>
+                    <div class="content">
+                        <h2>Abbas Bootwala</br>
+                            <span>DMM</span>
+                        </h2>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="imgBox">
+                        <img src="./assets/Batul.JPG"
+                            alt="Batul Udaipurwala">
+                    </div>
+                    <div class="content">
+                        <h2>Batul Udaipurwala</br>
+                            <span>Creative Admin</span>
+                        </h2>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="imgBox">
+                        <img src="./assets/Deep.JPG"
+                            alt="Deep Dama">
+                    </div>
+                    <div class="content">
+                        <h2>Deep Dama</br>
+                            <span>Technical Admin</span>
+                        </h2>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="imgBox">
+                        <img src="./assets/devansh.jpg"
+                            alt="Devansh Rathi">
+                    </div>
+                    <div class="content">
+                        <h2>Devansh Rathi</br>
+                            <span>Joint Treasurer</span>
+                        </h2>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="imgBox">
+                        <img src="./assets/Kesha.jpg"
+                            alt="Kesha Zala">
+                    </div>
+                    <div class="content">
+                        <h2>Kesha Zala</br>
+                            <span>Publicity Admin</span>
+                        </h2>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="imgBox">
+                        <img src="./assets/Mihir.JPG"
+                            alt="Mihir Kalal">
+                    </div>
+                    <div class="content">
+                        <h2>Mihir Kalal</br>
+                            <span>Organizing Admin</span>
+                        </h2>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="imgBox">
+                        <img src="./assets/Ruchi.jpg"
+                            alt="Ruchi Jha">
+                    </div>
+                    <div class="content">
+                        <h2>Ruchi Jha</br>
+                            <span>Joint PRO</span>
+                        </h2>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="imgBox">
+                        <img src="./assets/SahilPathare.JPG"
+                            alt="Sahil Pathare">
+                    </div>
+                    <div class="content">
+                        <h2>Sahil Pathare</br>
+                            <span>Marketing Admin</span>
+                        </h2>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="imgBox">
+                        <img src="./assets/Samarth1.jpg"
+                            alt="Samarth Amodkar">
+                    </div>
+                    <div class="content">
+                        <h2>Samarth Amodkar</br>
+                            <span>Joint CTO</span>
+                        </h2>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="imgBox">
+                        <img src="./assets/Samay.JPG"
+                            alt="Samay Mehta">
+                    </div>
+                    <div class="content">
+                        <h2>Samay Mehta</br>
+                            <span>Joint Secretary</span>
+                        </h2>
+                    </div>
+                </div>
+                
+          
+       
+        </div>
+        <div class="Heads">
+            <h1>Heads</h1>
+            <div class="container">
+                <div class="head-card">
+                    <h2>Zainuddin Fatakdawala</h2>
+                    <p>Technical Head</p>
+                </div>
+                <div class="head-card">
+                    <h2>Aryan Shah</h2>
+                    <p>Organizing Head</p>
+                </div>
+                <div class="head-card">
+                    <h2>Saksham Sapru</h2>
+                    <p>Publicity Head</p>
+                </div>
+                <div class="head-card">
+                    <h2>Shubham Shah</h2>
+                    <p>Marketing Head</p>
+                </div>
+                <div class="head-card">
+                    <h2>Vaishanvi Shah</h2>
+                    <p>Creativity Head</p>
+                </div>
+                
+                <!-- Add more head cards with names and designations as needed -->
+            </div>
+        </div>
+    </main>
+    <footer>
+        <a href="https://www.instagram.com/iete_kjsit/"><img src="./assets/instagram.png" alt="" /></a>
+        <a href="https://www.linkedin.com/company/iete-kjsieit/"><img src="./assets/linkedin.png" alt="" /></a>
+        <p class="ftitle">&copy; 2023 IETE KJSIT</p>
+    </footer>
+</body>
+
+</html>

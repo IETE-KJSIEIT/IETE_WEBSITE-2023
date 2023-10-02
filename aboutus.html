@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IETE-About Us</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Marmelad&family=Space+Grotesk:wght@500&display=swap"
+        rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Skranji:wght@700&display=swap" rel="stylesheet" />
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #000000;
+        font-family: Verdana, sans-serif;
+        margin: 0;
+        overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* nav */
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        position: fixed;
+        top: 30px;
+        z-index: 5;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(182, 180, 180, 0.5);
+        border-radius: 10px;
+        color: aliceblue;
+        list-style: none;
+        padding: 10px;
+    }
+
+    nav ul li {
+        padding: 10px;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        margin: 0px 10px;
+        color: white;
+        border-radius: 8px;
+        padding: 8px 40px;
+        transition: 0.4s ease;
+        font-family: 'Marmelad', sans-serif;
+        font-size: 20px;
+    }
+
+    nav ul li a:hover {
+        color: rgb(0, 0, 0);
+        background-color: rgb(205, 220, 230);
+        transition: 0.4s ease;
+    }
+
+    @media (max-width: 768px) {
+        nav ul li a {
+            padding: 8px 20px;
+            font-size: 16px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        nav ul li a {
+            padding: 6px 16px;
+            font-size: 12px;
+        }
+    }
+
+    @media (max-width: 484px) {
+        nav ul li a {
+            padding: 6px 6px;
+            font-size: 12px;
+        }
+    }
+
+    @media (max-width: 397px) {
+        nav ul li a {
+            padding: 1px 1px;
+            font-size: 10px;
+        }
+    }
+
+
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(11, 2, 82, 1);
+        color: aliceblue;
+        padding: 10px;
+        height: 20vh;
+        gap: 20px;
+    }
+
+    footer a img {
+        width: 40px;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10em;
+        background: linear-gradient(180deg,
+                rgba(0, 0, 0, 1) 0%,
+                rgba(11, 2, 82, 1) 100%);
+        
+    }
+
+    .about-us {
+        display: grid;
+        grid-template-columns: 60% 40%;
+        box-sizing: border-box;
+        padding: 50px;
+        gap: 2em;
+        
+    }
+
+    .part1 {
+        color: aliceblue;
+    }
+
+    .part1 h1 {
+        font-size: 5em;
+        font-family: 'Marmelad', sans-serif;
+    }
+
+    .part1 span {
+        font-style: italic;
+        font-weight: 900;
+        color: white;
+    }
+
+    .part1 p {
+        font-family: 'Marmelad', sans-serif;
+        font-size: 1.5em;
+        letter-spacing: 2px;
+        word-spacing: 2px;
+    }
+
+    .about-us img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        animation: effect123 4s ease 0s infinite normal forwards;
+    }
+    .about-us button{
+        background-color: rgb(4, 0, 122);
+        color: aliceblue;
+        padding: 20px;
+        margin: 10px 0px;
+        border-radius: 20px;
+        font-size: 1em;
+        border: 2px solid grey;
+        
+    }
+    .about-us button:active{
+        transform: translateY(2px);
+    }
+    @keyframes effect123 {
+
+        0%,
+        100% {
+            box-shadow: 0px 0px 45px rgb(0, 200, 255);
+        }
+
+        20%,
+        60% {
+            box-shadow: 0px 0px 45px rgb(179, 0, 255);
+        }
+
+        40%,
+        80% {
+            box-shadow: 0px 0px 45px rgb(34, 0, 255);
+        }
+    }
+
+    @media screen and (max-width: 999px) {
+        .about-us {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 30px;
+        box-sizing: border-box;
+        padding: 10px;
+    }
+
+    .part1 h1 {
+        font-size: 2em;
+    }
+    .part1 p {
+        font-size: 1em;
+    }
+    }
+</style>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="./Home.html">Home</a></li>
+            <li><a href="./Team-page.html">Team</a></li>
+            <li><a href="./Event-page.html">Events</a></li>
+            <li><a href="">About us</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="about-us">
+            <div class="part1">
+                <h1>About Us</h1>
+                <p>
+                    <span>The Institution of Electronics and Telecommunication Engineers
+                        (IETE)</span>
+                    is a prominent professional organization in India with a mission to
+                    advance the fields of electronics, telecommunications and
+                    information technology. Headquartered in New Delhi, it is dedicated
+                    to advancing the fields of electronics, telecommunications and
+                    information technology. IETE offers various categories of
+                    membership, including Student, Associate, Member and Fellow,
+                    providing access to valuable resources and networking opportunities.
+                    Recognized by the Indian government as a scientific and industrial
+                    research organization, IETE continues to foster research,
+                    development and education in the dynamic fields of electronics and
+                    telecommunications, making significant contributions to
+                    technological advancements in the country.
+                </p>
+                <button>Know more</button>
+            </div>
+            <img src="./assets2/photo.png" alt="image" />
+        </div>
+    </main>
+    <footer>
+        <a href="https://www.instagram.com/iete_kjsit/"><img src="./assets/instagram.png" alt="" /></a>
+        <a href="https://www.linkedin.com/company/iete-kjsieit/"><img src="./assets/linkedin.png" alt="" /></a>
+        <p class="ftitle">&copy; 2023 IETE KJSIT</p>
+    </footer>
+</body>
+
+</html>
