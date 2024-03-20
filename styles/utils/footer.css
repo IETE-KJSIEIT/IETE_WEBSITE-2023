@@ -1,0 +1,232 @@
+/* Footer */
+
+#footer {
+    width: 99vw;
+    display: flex;
+    flex-direction: column;
+    /* position: absolute;
+    bottom: 0; */
+    border-radius: 1rem;
+    box-shadow: 0 0 3px white;
+}
+
+.f-info {
+    text-align: center;
+    display: flex;
+    height: 6rem;
+    background-color: black;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.f-info-socials,
+.f-info-brand {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.f-info-socials img {
+    font-size: 1.2rem;
+    margin: 0 0.5rem;
+    margin-top: 0.6rem;
+    height: 2rem;
+}
+
+.dabba {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 1.5rem;
+}
+
+.map {
+    width: 600px;
+    height: 450px;
+    border: 1px solid gray;
+    box-shadow: 2px 2px 10px gray;
+    border-radius: 10px;
+    margin: 0 1rem;
+}
+
+.committee-info {
+    width: 600px;
+    height: 450px;
+    font-size: larger;
+    background-color: #000000;
+    border-radius: 10px;
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.committee-info p {
+    font-size: larger;
+    margin-left: 5rem;
+}
+
+@media (max-width: 750px) {
+    .f-info {
+        height: 5rem;
+    }
+
+    .f-info-socials, .f-info-brand {
+        height: 2.5rem;
+    }
+
+    .f-info-socials img {
+        font-size: 1rem;
+        margin: 0 0.5rem;
+        margin-top: 0.5rem;
+        height: 1.5rem;
+    }
+
+    .f-info-brand {
+        font-size: small;
+    }
+
+    .dabba {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0;
+    }
+
+    .committee-info {
+        width: 80%;
+        height: 80%;
+        font-size: small;
+        background-color: #000000;
+        border-radius: 10px;
+        margin: 1rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .committee-info p {
+        text-align: center;
+        font-size: large;
+        margin-left: 0;
+    }
+
+    .map {
+        width: 80%;
+        height: 280px;
+        border: 1px solid gray;
+        box-shadow: 2px 2px 10px gray;
+        border-radius: 10px;
+        margin: 1rem 0 0 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .map p {
+        height: 99%;
+        width: 99%;
+    }
+
+    .map iframe {
+        height: 100%;
+        width: 100%;
+        border: none;
+        border-radius: 10px;
+    }
+}
+
+@media (min-width: 750px) and (max-width: 1200px) {
+    .f-info {
+        height: 5rem;
+    }
+
+    .f-info-socials, .f-info-brand {
+        height: 2.5rem;
+    }
+
+    .f-info-socials img {
+        font-size: 1rem;
+        margin: 0 0.5rem;
+        margin-top: 0.5rem;
+        height: 1.5rem;
+    }
+
+    .f-info-brand {
+        font-size: small;
+    }
+
+    .dabba {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0;
+    }
+
+    .committee-info {
+        width: 80%;
+        height: 80%;
+        font-size: small;
+        background-color: #000000;
+        border-radius: 10px;
+        margin: 1rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .committee-info p {
+        text-align: center;
+        font-size: large;
+        margin-left: 0;
+    }
+
+    .map {
+        width: 80%;
+        height: 280px;
+        border: 1px solid gray;
+        box-shadow: 2px 2px 10px gray;
+        border-radius: 10px;
+        margin: 1rem 0 0 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .map p {
+        height: 99%;
+        width: 99%;
+    }
+
+    .map iframe {
+        height: 100%;
+        width: 100%;
+        border: none;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 386px) {
+    .map {
+        width: 80%;
+        height: 250px;
+        border: 1px solid gray;
+        box-shadow: 2px 2px 10px gray;
+        border-radius: 10px;
+        margin: 1rem 0 0 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.marcellus-sc-regular {
+    font-family: "Marcellus SC", serif !important;
+    font-style: normal !important;
+}

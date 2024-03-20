@@ -1,0 +1,567 @@
+@font-face {
+    font-family: bat;
+    src: url('../batman_forever/batmfo__.ttf') format('truetype');
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: black;
+    scroll-behavior: smooth;
+    font-family: bat;
+    overflow: hidden;
+    background-image: url('/assets/index/bg4.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+.section {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease;
+    scroll-snap-align: start;
+    color: white;
+}
+
+.canvas-container {
+    height: 100vh;
+    overflow: hidden;
+    scroll-snap-align: start;
+}
+
+#oscillation {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#oscillation img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+#oscillation .coming {
+    position: absolute;
+    bottom: 60px;
+    font-size: 1rem;
+}
+
+@media (max-width: 1000px) {
+    #oscillation img {
+        padding: 20px;
+        height: auto;
+        max-width: 80%;
+    }
+
+    #oscillation .coming {
+        font-size: 0.7rem;
+    }
+}
+
+#events {
+    background-color: black;
+}
+
+#events .flyer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flyer a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flyer img {
+    height: 90%;
+    width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px grey;
+}
+
+.flyer img:hover {
+    box-shadow: 0 0 30px grey;
+}
+
+@media (min-width: 750px) and (max-width: 1000px) {
+    .flyer img {
+        height: 30rem;
+        width: 45rem;
+        position: relative;
+        top: 1.5rem;
+    }
+}
+
+@media (min-width: 1000px) {
+    .flyer img {
+        height: 35rem;
+        width: 55rem;
+        position: relative;
+        top: 2.2rem;
+    }
+}
+
+/* Navbar */
+
+.navbar {
+    font-size: large;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    height: 5rem;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease-in-out;
+    font-family: bat;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+}
+
+.navbar .menu-toggle {
+    display: none;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+.menu-toggle i {
+    font-size: 1.5rem;
+}
+
+.navbar .logo {
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+.logo img {
+    border-radius: 50%;
+    height: 4.5rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+.navbar ul.navbar-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar ul.navbar-links li {
+    margin: 0 10px;
+}
+
+.navbar a {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+    color: #d060ea;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #d060ea;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Sidebar */
+.sidebar {
+    display: none;
+    width: 0;
+    /* Start with a width of 0 */
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-image: url('/assets/index/bg4.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 999;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: width 0.5s ease;
+    /* Transition the width property */
+    padding-top: 60px;
+}
+
+.sidebar.active {
+    display: block;
+    width: 300px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    padding: 10px 15px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    color: #d060ea;
+}
+
+.sidebar ul li a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #d060ea;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.sidebar ul li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.sidebar .close-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    font-size: 2rem;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+/* Footer */
+
+#about {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#footer {
+    width: 99vw;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    border-radius: 1rem;
+    box-shadow: 0 0 3px white;
+}
+
+.f-info {
+    text-align: center;
+    display: flex;
+    height: 6rem;
+    background-color: black;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.f-info-socials,
+.f-info-brand {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.f-info-socials img {
+    font-size: 1.2rem;
+    margin: 0 0.5rem;
+    margin-top: 0.6rem;
+    height: 2rem;
+}
+
+.dabba {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 1.5rem;
+}
+
+.map {
+    width: 600px;
+    height: 450px;
+    border: 1px solid gray;
+    box-shadow: 2px 2px 10px gray;
+    border-radius: 10px;
+    margin: 0 1rem;
+}
+
+.committee-info {
+    width: 600px;
+    height: 450px;
+    font-size: larger;
+    background-color: #000000;
+    border-radius: 10px;
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.committee-info p {
+    font-size: larger;
+    margin-left: 5rem;
+}
+
+@media (max-width: 750px) {
+    .f-info {
+        height: 5rem;
+    }
+
+    .f-info-socials,
+    .f-info-brand {
+        height: 2.5rem;
+    }
+
+    .f-info-socials img {
+        font-size: 1rem;
+        margin: 0 0.5rem;
+        margin-top: 0.5rem;
+        height: 1.5rem;
+    }
+
+    .f-info-brand {
+        font-size: small;
+    }
+
+    .dabba {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0;
+    }
+
+    .committee-info {
+        width: 80%;
+        height: 80%;
+        font-size: small;
+        background-color: #000000;
+        border-radius: 10px;
+        margin: 1rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .committee-info p {
+        text-align: center;
+        font-size: large;
+        margin-left: 0;
+    }
+
+    .map {
+        width: 80%;
+        height: 280px;
+        border: 1px solid gray;
+        box-shadow: 2px 2px 10px gray;
+        border-radius: 10px;
+        margin: 1rem 0 0 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .map p {
+        height: 99%;
+        width: 99%;
+    }
+
+    .map iframe {
+        height: 100%;
+        width: 100%;
+        border: none;
+        border-radius: 10px;
+    }
+}
+
+@media (min-width: 750px) and (max-width: 1200px) {
+    .f-info {
+        height: 5rem;
+    }
+
+    .f-info-socials,
+    .f-info-brand {
+        height: 2.5rem;
+    }
+
+    .f-info-socials img {
+        font-size: 1rem;
+        margin: 0 0.5rem;
+        margin-top: 0.5rem;
+        height: 1.5rem;
+    }
+
+    .f-info-brand {
+        font-size: small;
+    }
+
+    .dabba {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0;
+    }
+
+    .committee-info {
+        width: 80%;
+        height: 80%;
+        font-size: small;
+        background-color: #000000;
+        border-radius: 10px;
+        margin: 1rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .committee-info p {
+        text-align: center;
+        font-size: large;
+        margin-left: 0;
+    }
+
+    .map {
+        width: 80%;
+        height: 280px;
+        border: 1px solid gray;
+        box-shadow: 2px 2px 10px gray;
+        border-radius: 10px;
+        margin: 1rem 0 0 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .map p {
+        height: 99%;
+        width: 99%;
+    }
+
+    .map iframe {
+        height: 100%;
+        width: 100%;
+        border: none;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 386px) {
+    .map {
+        width: 80%;
+        height: 250px;
+        border: 1px solid gray;
+        box-shadow: 2px 2px 10px gray;
+        border-radius: 10px;
+        margin: 1rem 0 0 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.marcellus-sc-regular {
+    font-family: "Marcellus SC", serif !important;
+    font-style: normal !important;
+}
+
+/* Navbar */
+@media (max-width: 1000px) {
+    .navbar ul.navbar-links {
+        display: none;
+    }
+
+    .navbar .menu-toggle {
+        display: block;
+        cursor: pointer;
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0 0.5rem;
+        padding: 0 0.5rem;
+    }
+
+    .menu-toggle i {
+        font-size: 2rem;
+    }
+
+    .sidebar {
+        width: 300px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-image: url('/assets/index/bg4.avif');
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 999;
+        overflow-y: auto;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+
+    .sidebar ul li {
+        padding: 15px 20px;
+    }
+
+    .sidebar .close-btn {
+        display: block;
+    }
+}

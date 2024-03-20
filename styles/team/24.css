@@ -1,0 +1,225 @@
+@font-face {
+    font-family: bat;
+    src: url('../batman_forever/batmfo__.ttf') format('truetype');
+}
+
+:root {
+    --surface-color: rgb(0, 0, 0);
+    --curve: 40;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    margin-top: 6rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    /* background-color: #fef8f8; */
+    background-image: url('/assets/index/bg4.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin: 4rem 0vw;
+    list-style-type: none;
+}
+
+.card {
+    position: relative;
+    display: block;
+    height: 350px;
+    /* Adjust height as needed */
+    width: 70%;
+    /* Adjust width as needed */
+    border-radius: calc(var(--curve) * 1px);
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    /* Border effect */
+    margin-bottom: 2rem;
+    /* Margin between cards */
+}
+
+/* Apply margin-bottom to every 4th card */
+.cards li:nth-child(4n) {
+    margin-bottom: 0;
+}
+
+.card__image {
+    width: 100%;
+    height: auto;
+}
+
+.card__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    border-radius: calc(var(--curve) * 1px);
+    background-color: var(--surface-color);
+    transform: translateY(100%);
+    transition: .2s ease-in-out;
+}
+
+.card:hover .card__overlay {
+    transform: translateY(0);
+}
+
+.card__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    padding: 20px;
+    border-radius: calc(var(--curve) * 1px) 0 0 0;
+    background-color: var(--surface-color);
+    transform: translateY(-100%);
+    transition: .2s ease-in-out;
+}
+
+.card__arc {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    z-index: 1;
+}
+
+.card__arc path {
+    fill: var(--surface-color);
+    d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+}
+
+.card:hover .card__header {
+    transform: translateY(0);
+}
+
+.card__thumb {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+
+.card__title {
+    font-size: 24px;
+    margin: 0 0 .3em;
+    color: #f7dfff;
+    text-shadow: 0 0 3px cornsilk;
+    /* Adding the glowing effect */
+}
+
+.card__tagline {
+    display: block;
+    margin: 1em 0;
+    font-family: "MockFlowFont";
+    font-size: .8em;
+    color: #D7BDCA;
+}
+
+.card__status {
+    font-size: .8em;
+    color: #D7BDCA;
+}
+
+.card__description {
+    padding: 0 0em 1em;
+    margin: 0;
+    margin-left: 1.5rem;
+    color: #D7BDCA;
+    font-family: "MockFlowFont";
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    font-size: 25px;
+}
+
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-container {
+    position: fixed;
+    top: 7rem;
+    /* Adjust as needed */
+    right: 2rem;
+    /* Adjust as needed */
+    z-index: 1000;
+    /* Ensure it's above other content */
+}
+
+.dropbtn {
+    background-color: #6b2c91;
+    /* Deep purple shade */
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    /* Add border */
+    border-radius: 10px;
+    /* Add border-radius */
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.3s ease-in-out;
+    /* Add transition */
+}
+
+/* Add glow effect on hover */
+.dropbtn:hover {
+    border-color: #1c0769;
+    box-shadow: 0 0 10px #120061;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #35007a;
+}
+
+.title-core {
+    color: #f9f9f9;
+    text-align: center;
+    font-family: bat;
+}
